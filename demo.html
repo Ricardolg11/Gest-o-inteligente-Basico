@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de relatório – DocSaúde</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/relatorio.css">
+</head>
+<body class="demo-page">
+
+<header class="no-print">
+  <div class="container nav">
+    <a class="logo" href="index.html"><div class="logo-icon">+</div> DocSaúde</a>
+    <a class="btn btn-outline btn-sm" href="index.html">← Voltar ao site</a>
+  </div>
+</header>
+
+<main class="demo-main">
+  <div class="container">
+
+    <div class="demo-intro no-print">
+      <p class="eyebrow">Demonstração</p>
+      <h1>Exemplo de documento clínico</h1>
+      <p>Veja como um documento é gerado no padrão da instituição e como a autorização de acesso é controlada. <strong>Todos os dados abaixo são fictícios.</strong></p>
+    </div>
+
+    <div class="tabs no-print" role="tablist" aria-label="Tipo de documento">
+      <button class="tab active" role="tab" data-doc="relatorio">📄 Relatório clínico</button>
+      <button class="tab" role="tab" data-doc="declaracao">📋 Declaração médica</button>
+      <button class="tab" role="tab" data-doc="evolucao">📝 Evolução do paciente</button>
+    </div>
+
+    <div class="demo-layout">
+
+      <!-- Documento -->
+      <article class="paper" id="paper">
+        <header class="paper-head">
+          <div class="paper-brand">
+            <div class="logo-icon">+</div>
+            <div>
+              <strong>Hospital Exemplo</strong>
+              <small>CNPJ 00.000.000/0001-00 · Av. Modelo, 1000 – Cidade/UF</small>
+            </div>
+          </div>
+          <div class="paper-meta">
+            <span id="docProtocolo">DOC-2026-0001</span>
+            <small id="docData"></small>
+          </div>
+        </header>
+
+        <h2 class="paper-title" id="docTitulo"></h2>
+
+        <section class="patient">
+          <div><small>Paciente</small><strong>Maria Souza Almeida</strong></div>
+          <div><small>Nascimento</small><strong>14/03/1978</strong></div>
+          <div><small>Prontuário</small><strong>PR-458210</strong></div>
+          <div><small>Setor</small><strong>Clínica Médica</strong></div>
+        </section>
+
+        <div class="paper-body" id="docCorpo"></div>
+
+        <footer class="signature">
+          <div class="sign-line"></div>
+          <strong>Dr. João Exemplo</strong>
+          <small>Médico · CRM 00000/UF</small>
+          <small class="sign-note">Assinatura digital · documento padronizado pelo modelo institucional</small>
+        </footer>
+      </article>
+
+      <!-- Painel lateral -->
+      <aside class="side no-print">
+
+        <div class="panel">
+          <h3>Status do documento</h3>
+          <span class="status status-pending" id="statusBadge">Aguardando autorização</span>
+          <p class="panel-text" id="statusText">O acesso ao documento ainda não foi autorizado.</p>
+          <button class="btn" id="btnAutorizar">Autorizar acesso</button>
+        </div>
+
+        <div class="panel">
+          <h3>Ações</h3>
+          <div class="actions">
+            <button class="btn btn-outline btn-sm" id="btnImprimir">🖨️ Imprimir / PDF</button>
+            <button class="btn btn-outline btn-sm" id="btnCopiar">🔗 Copiar link de acesso</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Histórico de acessos</h3>
+          <ul class="log" id="logList"></ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/relatorio.js"></script>
+</body>
+</html>
